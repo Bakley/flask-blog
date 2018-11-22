@@ -1,6 +1,6 @@
 # Setting up your system
 
-Make sure you already have Python3, Pip and Virtualenv installed in your system.
+Make sure you already have Python 3, Pip and Virtualenv installed in your system.
 
 # How to get started
 
@@ -10,7 +10,7 @@ Start by making a directory where we will work on. Simply Open your terminal and
 mkdir flaskblog
 ```
 
-Afterwhich we go into the directory:
+After which we go into the directory:
 
 ```
 cd flaskblog
@@ -35,7 +35,27 @@ source bin/activate
 Login into your github account and open the project folder then follow the instruction on how to clone the existing project. It should be something similar to:
 
 ```
-https://github.com/Bakley/flask-blog.git
+git clone https://github.com/Bakley/flask-blog.git .
+```
+
+If you get something similar to:
+
+```
+fatal: destination path '.' already exists and is not an empty directory.
+```
+
+Then follow the following instructions:
+
+```
+git init
+```
+
+```
+git remote add -t \* -f origin https://github.com/Bakley/flask-blog.git
+```
+
+```
+git checkout develop
 ```
 
 Next, install the requirements by typing:
@@ -60,8 +80,8 @@ export FLASK_APP=run.py
 flask run
 ```
 
-     
+
 ### Commands
   The application was tested using `nose` and `coverage`. To run the tests on the bash terminal use
-     
+
      nosetests --with-coverage --cover-package=app  && coverage report
